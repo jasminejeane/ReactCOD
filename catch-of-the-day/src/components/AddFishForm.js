@@ -16,8 +16,11 @@ class AddFishForm extends React.Component {
       desc: this.descRef.value.value,
       image: this.imageRef.value.value
     };
-    console.log(fish);
+    this.props.addFish(fish);
+    // refresh the form
+    e.currentTarget.reset();
   }
+
   render() {
     return (
     <form className="fish-edit" onSubmit={this.createFish}>
